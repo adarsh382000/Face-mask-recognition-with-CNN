@@ -7,7 +7,7 @@ from flask import Flask,request,render_template
 from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
-model = tf.keras.models.load_model(r"C:\Users\adars\Downloads\Best.hdf5")
+model = tf.keras.models.load_model(r"best.hdf5")
 
 label_dict={0:'Mask',1:'No Mask'}
 
