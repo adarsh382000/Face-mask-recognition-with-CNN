@@ -1,1 +1,2 @@
-web: gunicorn app:app --preload --timeout 120
+web: gunicorn app:app --preload
+config: set WEB_CONCURRENCY=3
