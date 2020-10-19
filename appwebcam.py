@@ -38,17 +38,9 @@ def upload():
                 (0, 0, 225),  
                 2,  
                 cv2.LINE_4)
-            elif classes == 'Mask':
-                cv2.putText(frame,  
-                'Mask',  
-                (250, 448),  
-                cv2.FONT_HERSHEY_SIMPLEX , 1,  
-                (255, 0, 0),  
-                2,  
-                cv2.LINE_4)
             else:
                 cv2.putText(frame,  
-                'No face detected',  
+                'Mask',  
                 (250, 448),  
                 cv2.FONT_HERSHEY_SIMPLEX , 1,  
                 (255, 0, 0),  
