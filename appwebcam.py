@@ -30,6 +30,7 @@ def upload():
             classes = labels_dict[np.argmax(classes)]
             if classes == 'No Mask':
                 frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+                frame = cv2.copyMakeBorder(frame, 10, 10, 10, 10, cv2.BORDER_CONSTANT)
             cv2.imshow("Capturing", frame)
             key=cv2.waitKey(1)
             if key == ord('q'):
