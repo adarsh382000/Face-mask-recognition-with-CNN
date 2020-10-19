@@ -27,7 +27,7 @@ def upload():
             x = img_to_array(im)
             images = np.array([x],dtype="float32")
             classes = model.predict(images)
-            classes = labels_dict[np.argmax(classes)]
+            classes = label_dict[np.argmax(classes)]
             if classes == 'No Mask':
                 frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
                 frame = cv2.copyMakeBorder(frame, 10, 10, 10, 10, cv2.BORDER_CONSTANT)
@@ -38,9 +38,17 @@ def upload():
                 (0, 0, 225),  
                 2,  
                 cv2.LINE_4)
-            else:
+            elif classes == 'Mask':
                 cv2.putText(frame,  
                 'Mask',  
+                (250, 448),  
+                cv2.FONT_HERSHEY_SIMPLEX , 1,  
+                (255, 0, 0),  
+                2,  
+                cv2.LINE_4)
+            else:
+                cv2.putText(frame,  
+                'No face detected',  
                 (250, 448),  
                 cv2.FONT_HERSHEY_SIMPLEX , 1,  
                 (255, 0, 0),  
