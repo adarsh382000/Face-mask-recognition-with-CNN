@@ -29,7 +29,6 @@ def upload():
             classes = model.predict(images)
             classes = label_dict[np.argmax(classes)]
             if classes == 'No Mask':
-                frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
                 frame = cv2.copyMakeBorder(frame, 10, 10, 10, 10, cv2.BORDER_CONSTANT)
                 cv2.putText(frame,  
                 'No Mask',  
